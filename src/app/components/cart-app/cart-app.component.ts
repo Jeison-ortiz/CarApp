@@ -25,7 +25,7 @@ export class CartAppComponent implements OnInit{
 
   ngOnInit(): void {
     this.products = this.service.findAll();
-    this.items = JSON.parse(sessionStorage.getItem('cart')!) || [];
+    this.items = JSON.parse(sessionStorage.getItem('cart') || '[]');
     this.calculateTotal();
   }
 
