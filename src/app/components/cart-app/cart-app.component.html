@@ -1,11 +1,17 @@
 <h2>Catalogo de productos App</h2>
-<catalog [products]="products" (productEventEmirrer)="onAddCart($event)"/>
-@if (items.length>0) {
-  <cart [items]="items"
-  [total]="total"
+<div class="row">
+  <div class="col-9">
+    <catalog [products]="products" (productEventEmirrer)="onAddCart($event)"/>
+  </div>
+  <div class="col-3">
+    @if (items.length>0) {
+      <cart [items]="items"
+      [total]="total"
 
-  (idProductEventEmitter)="onDeleteCart($event)"/>
-}@else {
-  <div class="alert alert-warning">No hay elementos en el carro</div>
-}
+      (idProductEventEmitter)="onDeleteCart($event)"/>
+    }@else {
+      <div class="alert alert-warning">No hay elementos en el carro</div>
+    }
+  </div>
 
+</div>
