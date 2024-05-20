@@ -18,6 +18,8 @@ export class CartAppComponent implements OnInit{
   items: CartItem[] = [];
 
   total: number = 0;
+
+  showCart = false;
   constructor(private service: ProductService){}
 
   ngOnInit(): void {
@@ -58,6 +60,10 @@ export class CartAppComponent implements OnInit{
 
   saveSession():void{
     sessionStorage.setItem('cart', JSON.stringify(this.items));
+  }
+
+  openCart(): void{
+    this.showCart = !this.showCart;
   }
 
 }
