@@ -17,7 +17,7 @@ export class CartComponent implements OnChanges{
 
   ngOnChanges(changes: SimpleChanges): void {
 
-    let itmesChanges = changes['items']
+   // let itmesChanges = changes['items']
     this.calculateTotal();
     this.saveSession();
 
