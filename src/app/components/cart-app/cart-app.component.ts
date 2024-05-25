@@ -51,6 +51,9 @@ export class CartAppComponent implements OnInit{
 
   onDeleteCart(id: number):void{
     this.items = this.items.filter(item => item.product.id !== id);
+    if(this.items.length == 0){
+      sessionStorage.removeItem('cart')
+    }
   //  this.calculateTotal();
   //  this.saveSession();
   }
